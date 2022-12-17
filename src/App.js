@@ -12,7 +12,7 @@ function App() {
         main: '#f44336',
       },
       tertiary: {
-        main: '#fff',
+        main: '#e3e3e3',
       }
     },
   });
