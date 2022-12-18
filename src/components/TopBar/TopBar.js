@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 // imports do material ui
 import { makeStyles } from '@mui/styles';
@@ -13,15 +13,18 @@ import {
     Toolbar,
     Button,
     IconButton,
+    useTheme,
+    Switch
 } from '@mui/material';
 
 // import de images
 import pretoLogo from '../../images/preto.png'
+import brancoLogo from '../../images/branco.png'
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
         boxShadow: 'none',
-        minHeight: 46,
+        minHeight: 35,
         zIndex: theme.zIndex.drawer + 1
     },
     grow: {
@@ -39,11 +42,21 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-function TopBar() {
+function TopBar({darkMode, setDarkMode}) {
     const classes = useStyles()
+    const theme =  useTheme()
+    const [logo, setLogo] = useState([])
+
+    useEffect(() => {
+        if(theme.palette.mode === 'dark'){
+            setLogo(brancoLogo)
+        } else {
+            setLogo(pretoLogo)
+        }
+    },[theme.palette.mode])
+  
     return (
-        <div className={classes.root}>
-            <AppBar color='inherit'
+            <AppBar 
                 className={classes.appBar}
                 sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, boxShadow: 'none' }}
             >
@@ -57,9 +70,11 @@ function TopBar() {
                         <MenuIcon />
                     </IconButton>
 
-                    <img src={pretoLogo} alt="logo" className={classes.logo} />
+                    <img src={ logo} alt="logo" className={classes.logo} />
                     <div className={classes.grow} />
-
+                        <Switch value={darkMode}
+                        onChange={() => setDarkMode(!darkMode)} 
+                        className={classes.icons} />
                     <IconButton
                         size="large"
                         color="inherit"
@@ -88,12 +103,11 @@ function TopBar() {
                     </IconButton>
                     <Button
                         variant="outlined"
-                        color="primary"
+                        color="secondary"
                         startIcon={<AccountCircleIcon />}
                     > Fazer Login</Button>
                 </Toolbar>
             </AppBar>
-        </div>
     )
 }
 

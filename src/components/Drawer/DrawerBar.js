@@ -111,7 +111,7 @@ function DrawerBar() {
                     </Typography>
                     <Button
                         variant="outlined"
-                        color="primary"
+                        color="secondary"
                         startIcon={<AccountCircleIcon />}
                     > Fazer Login</Button>
                 </Box>
