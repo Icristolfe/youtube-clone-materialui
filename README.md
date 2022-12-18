@@ -1,7 +1,7 @@
 # Youtube
 
 <h1>🔰Youtube Home Page. (ReactJS, Material ui ):</h1>
-<p>Página de inicio do youtube com barra de navegação, botão de login e barra lateral, adicionado também o dark mode</p>
+<p>Página de inicio do youtube com barra de navegação, botão de login e barra lateral, adicionado também o dark mode e exibição de videos recomendados para o usuário, aplicação feita com o intuito de aplicar alguns conceitos de material ui.</p>
 
 <a data-flickr-embed="true" href="https://www.flickr.com/photos/196553482@N03/52570252390/in/dateposted-public/" title="Captura de tela de 2022-12-17 21-13-49"><img src="https://live.staticflickr.com/65535/52570252390_21bf8963c7_o.png" width="1365" height="664" alt="Captura de tela de 2022-12-17 21-13-49"></a>
 
